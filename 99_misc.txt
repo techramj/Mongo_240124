@@ -1,0 +1,56 @@
+emp
+----
+id      Name     salary
+1       Raj     1000
+2       Sam     2000
+3      
+4       Jack    4000
+
+1. waq to insert name = Jessica and salary = 5000
+update emp 
+set name = 'Jessica', salary = 50000
+where id = 3;
+
+OUTPUT:
+id      Name     salary
+1       Raj     1000
+2       Sam     2000
+3       Jessica 5000
+4       Jack    4000
+
+
+2. waq TO DELETE SALARY = 1000
+update emp set salary = null where salary = 1000;
+OUTPUT:
+1       Raj     
+2       Sam     2000
+3       Jessica 5000
+4       Jack    4000
+
+INSERT => Insert new record
+UPDATE => modify the existing record
+DELETE => delete record
+
+
+emp
+id      name       did(fk => dept.did)
+1        Jack       10
+
+
+
+dept
+did(pk)     dname      mgr_id(fk => emp.id)
+10          HR          1
+
+insert into dept values(10,'HR',NULL);
+insert into emp values(1,'jack',10);  
+update emp set did=10 where id=1;
+
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/techramj/Mongo_240124.git
+git push -u origin main
