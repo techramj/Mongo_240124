@@ -17,8 +17,6 @@
         Consistency
         Isolation
         Durability
-
-
 ### NoSql 
 1. Non -relation or distributed database system
 2. Dynamic Schema
@@ -29,6 +27,42 @@
         BA Basically Available
         Soft State
         Eventual consistency
+
+
+## Type of NoSQL
+### Key-value
+        redis, riak
+
+### Graph Database
+        Neo4j, HyperGraph DB
+
+
+### Document Oriented
+        MongoDB, CouchDB
+
+
+### Column Family
+        Cassandra, Hbase
+
+
+## MongoDB
+        MongoDb is an open source, document-oriented db.
+        Data is stroe in JSON-like documents with dynamic schemas.
+         
+         {"_id":1,
+           "name":"Jack",
+           "salalry": 5000,
+           "dept" : {"did":10, 
+                 "dname":"HR",
+                 "city":"Pune"
+                 }   
+         }
+
+         {"_id":2,
+           "name":"Jackson",
+           "salalry": 5000
+         }
+
 
 
 #  Install MongoDB
@@ -80,8 +114,46 @@ https://downloads.mongodb.com/compass/mongosh-2.1.1-win32-x64.zip
 
 unzip the zip file and open the bin folder.
 
+copy the mongosh.exe and paste in the bin folder of mongodb
+eg: C:\Program Files\MongoDB\Server\6.0\bin
+
 ##  Component:
 1. Atlas:
 2. Mongo
 3. MongoD
 4. Compass
+
+
+## start the DB
+
+        execute command mongosh in cmd.
+
+![pic3](./img/10.png)
+
+
+
+        Note: mongosh is a shell script written in JS
+
+## commands 
+                SQL		        MongoDB	
+                ----------------------------------
+                Database		Database	
+                Table		        Collection	
+                Row		        Document	
+                Column		        Field	
+
+
+### display database list
+        > show dbs
+
+### create database
+        > use <database_name>
+        create and move inside the db
+        or if db exists then move inside the db
+
+### drop database
+        > db.dropDatabase();
+
+### create collecton / table
+        > db.createCollection(<collection_name>)
+        eg: db.createCollection('student');
