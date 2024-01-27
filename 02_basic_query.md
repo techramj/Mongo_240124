@@ -64,7 +64,7 @@
             db.inventory.find({qty:10});
             db.inventory.find({qty: {$eq:10}});
 
-            
+
 
 2.  waq to find the record with name = 'ij';
 
@@ -74,3 +74,48 @@
 ### $ne
     db.inventory.find({qty: {$ne:10}});
     db.inventory.find({qty: {$ne:10}}, {qty:1}); //select only _id and qty
+
+
+### $gt (greater than operator)
+    db.inventory.find({qty: {$gt:13}}, {qty:1});
+
+### $gte (greater than equal operator)
+    db.inventory.find({qty: {$gte:13}}, {qty:1});
+
+### $lt (less than operator)
+    db.inventory.find({qty: {$lt:10}}, {qty:1});
+
+### $lte (less than equal operator)
+    db.inventory.find({qty: {$lte:10}}, {qty:1});
+
+### $in
+    db.inventory.find({qty: {$in:[8,11,14]}}, {qty:1, item:1});
+
+### $nin
+    db.inventory.find({qty: {$nin:[8,11,14,10]}}, {qty:1, item:1});
+
+## Logical Operator
+### $and
+    #fetch the record with qty =10 and tags with 'B'
+    //db.inventory.find({qty: {$eq:10}});
+    //db.inventory.find({tags: {$eq:'A'}});
+    db.inventory.find({$and: [{qty:{$eq:10}}, {tags:{$eq:'B'}}]});
+
+
+### $or
+    #fetch the record with qty =10 or tags with 'X'
+    db.inventory.find({$or: [{qty:{$eq:9}}, {tags:{$eq:'X'}}]});
+
+### $not
+    db.inventory.find({qty: {$not: {$gt:9}}})
+
+
+## Element operator
+
+### $exists (to check whether the field are present or not)
+    db.emp.find({age: {$exists:false}});
+    
+## Evaluation
+
+
+## Operator for Array

@@ -13,3 +13,5 @@ db.inventory.insertMany([
 /*
     mutiple line comment
 */
+
+db.inventory.find({$and: [{qty:{$eq:10}}, {tags:{$eq:'A'}}]});
