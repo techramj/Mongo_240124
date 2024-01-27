@@ -16,5 +16,6 @@
     insert 3 documents(rows).
 
 # Assignment 04
+    find the inventory with name != ij
 
 

@@ -134,5 +134,5 @@ eg: C:\Program Files\MongoDB\Server\6.0\bin
 
         Note: mongosh is a shell script written in JS
 
-## execute the script
+## execute the script in CMD
         mongosh <database_name> absolute_path

@@ -51,3 +51,26 @@
 
 
 ## project or selection
+    db.<collection_name>.find({filter}, {projection});
+
+### display id,item and qty (inventory collection)
+    db.inventory.find({}, {item:1, qty:1});
+
+## operator
+
+### equal operator ($eq)
+1. fetch the document with qty = 10
+
+            db.inventory.find({qty:10});
+            db.inventory.find({qty: {$eq:10}});
+
+            
+
+2.  waq to find the record with name = 'ij';
+
+        db.inventory.find({'item.name': {$eq:'ij'}});
+
+
+### $ne
+    db.inventory.find({qty: {$ne:10}});
+    db.inventory.find({qty: {$ne:10}}, {qty:1}); //select only _id and qty
