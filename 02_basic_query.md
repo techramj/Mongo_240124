@@ -44,3 +44,10 @@
         eg: db.emp.insertMany([{name:'Jessica',job:'HR'},{name:'San', age:22}]);
 
 ![pic3](./img/12.png)
+
+
+## drop the collection
+    db.<collection_name>.drop();
+
+
+## project or selection

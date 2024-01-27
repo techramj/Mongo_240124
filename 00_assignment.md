@@ -10,3 +10,11 @@
     16 rows using InsertMany
     display the collection
 
+# Assignment 03
+    drop the collection emp
+    again create the collection with using db.createCollection() command
+    insert 3 documents(rows).
+
+# Assignment 04
+
+
