@@ -136,3 +136,21 @@ eg: C:\Program Files\MongoDB\Server\6.0\bin
 
 ## execute the script in CMD
         mongosh <database_name> absolute_path
+
+
+## import json file
+1. download json-tool
+
+        https://www.mongodb.com/try/download/database-tools
+        or
+        https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.9.4.zip
+
+2. extract the zip file and copy mongoimport tool to the bin folder of mongodb
+
+3. execute the below command to import the json file
+
+        cd <path of the json file>
+        mongoimport <json-file name> -d <database name> -c <collection-name> --jsonArray
+        mongoimport movie.json -d hr -c movie --jsonArray
+
+        
