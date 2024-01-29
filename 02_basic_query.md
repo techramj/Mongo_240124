@@ -114,8 +114,78 @@
 
 ### $exists (to check whether the field are present or not)
     db.emp.find({age: {$exists:false}});
+
+### $type
+    # to check the type of data
+    db.emp.insertMany([
+        {_id:104, name:'Ajay',salary:'2000'},
+        {_id:105, name:'Vijay',salary:2000.88},
+        {_id:106, name:'Sanjay',salary:true},
+    ]);
+    db.emp.find({salary: {$type:'int'}});
+    db.emp.find({salary: {$type:'double'}});
+    db.emp.find({salary: {$type:'string'}});
+
+    db.emp.find({salary: {$type:'double'}}, {salary:1});
+
+
     
 ## Evaluation
 
+### $expr
+    db.budgets.find({$expr: {$gt:[ '$spent', '$budget']}});
+    note: field name should be in quote and with dollar operator 
+
+### $mod
+    # find document with odd qty
+    db.inventory.find({qty: {$mod:[2,1]}});
+
+### $text
+    db.articles.find({$text: {$search:'Java'}});
+
+    note: $text operator can be applied to the index field
+
+    db.articles.createIndex({subject:'text'});
 
 ## Operator for Array
+
+
+### skip and limit
+    db.emp.find({}, {salary:1, age:1}).skip(2).limit(100);
+
+    eg: we have 10 records:
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+
+    db.emp.find().skip(4);
+    5
+    6
+    7
+    8
+    9
+    10
+
+    db.emp.find().limit(3);
+     1
+     2
+     3
+
+    db.emp.find().skip(4).limit(2);
+    5
+    6
+
+     db.emp.find().limit(4).skip(2);
+     3
+     4
+
+
+
+
