@@ -186,10 +186,25 @@
 
 ## Operator for Array
 
+### $all
     # Document which contains book, headphone
     db.items.find({tags:{$all:['school', 'headphone']}}); //prefer
     db.items.find({$and: [{tags:{$eq:'school'}}, {tags:{$eq:'headphone'}}]});
 
 
+### elementMatch
+    db.data.insertMany([
+        {_id:1, res:[80,89,98]},
+        {_id:2, res:[80,82,86]},
+        {_id:3, res:[10,50,60]},
+        {_id:4, res:[5,25,55]},
+    ]);
 
+    db.data.insertOne({_id:5, res:[95,100]})
 
+    db.data.find({res: {$gt:80, $lt:85}}); // 2 row
+
+    db.data.find({res: {$elemMatch: {$gt:80, $lt:85}}}); //1 document
+
+### size
+    db.data.find({res: {$size:3}});
