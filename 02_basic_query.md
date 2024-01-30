@@ -142,13 +142,11 @@
 
 ### $text
     db.articles.find({$text: {$search:'Java'}});
+    db.articles.find({$text: {$search:'java' , $caseSensitive: true}});
 
     note: $text operator can be applied to the index field
 
     db.articles.createIndex({subject:'text'});
-
-## Operator for Array
-
 
 ### skip and limit
     db.emp.find({}, {salary:1, age:1}).skip(2).limit(100);
@@ -185,6 +183,12 @@
      db.emp.find().limit(4).skip(2);
      3
      4
+
+## Operator for Array
+
+    # Document which contains book, headphone
+    db.items.find({tags:{$all:['school', 'headphone']}}); //prefer
+    db.items.find({$and: [{tags:{$eq:'school'}}, {tags:{$eq:'headphone'}}]});
 
 
 
