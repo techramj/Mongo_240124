@@ -63,6 +63,10 @@
            "salalry": 5000
          }
 
+## Pointer
+1. max size of document(row) = 16MB
+2. 
+
 
 
 #  Install MongoDB
@@ -152,5 +156,3 @@ eg: C:\Program Files\MongoDB\Server\6.0\bin
         cd <path of the json file>
         mongoimport <json-file name> -d <database name> -c <collection-name> --jsonArray
         mongoimport movie.json -d hr -c movie --jsonArray
-
-        

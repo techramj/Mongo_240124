@@ -32,4 +32,9 @@
     db.doc2.updateMany({}, {$rename:{'low':'lowscore'}})
 
 ## $set
+  db.doc2.updateOne({_id:1}, {$set:{lowscore:400}});
 
+
+## delete the document
+    db.<collection_name>.deleteOne({filter});
+    db.<collection_name>.deleteMany({filter});

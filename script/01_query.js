@@ -16,3 +16,23 @@ db.emp.insertMany([
     {name: 'Elizabeth20', salary:20000},
     {name: 'Elizabeth21', salary:22000},
 ]);
+
+db.citizens.addMany[
+    {_id:10001, name:'Jack',age:22,city:'Pune', cordinates:{lat:10, long:45}},
+    {_id:10002, name:'Pranav',age:23,city:'Pune', cordinates:{lat:10, long:45}},
+    {_id:10003, name:'Payal',age:22,city:'Pune', cordinates:{lat:10, long:45}},
+    {_id:10004, name:'Priya',age:20,city:'Pune', cordinates:{lat:10, long:45}},
+    {_id:10005, name:'Priayank',age:24,city:'Pune', cordinates:{lat:10, long:45}}
+];
+
+db.cities.insertOne({name:'pune', citizens:[10001,10002,20003,10004,10005]});
+
+or
+--
+db.cities.insertOne({name:'pune', 
+citizens:[{_id:10001, name:'Jack',age:22,city:'Pune', cordinates:{lat:10, long:45}},
+{_id:10002, name:'Pranav',age:23,city:'Pune', cordinates:{lat:10, long:45}},
+{_id:10003, name:'Payal',age:22,city:'Pune', cordinates:{lat:10, long:45}},
+{_id:10004, name:'Priya',age:20,city:'Pune', cordinates:{lat:10, long:45}},
+{_id:10005, name:'Priayank',age:24,city:'Pune', cordinates:{lat:10, long:45}}]
+});
