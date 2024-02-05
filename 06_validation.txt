@@ -1,0 +1,10 @@
+validation
+-------------
+emp
+id    name    salary 
+id    name     salary   age :23
+id    age:'retirement-age'
+
+db.createCollection('emp'); //creating collection without any validation
+
+db.createCollection.('emp',{})

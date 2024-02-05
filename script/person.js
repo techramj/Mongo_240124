@@ -48,3 +48,21 @@ db.person.insertMany([
         age:27, gender:'Male'
     }
 ]);
+
+
+db.person.aggregate([
+    { $match: { gender: 'Male' } },
+    { $sort: { _id: 1 } },
+    {
+        $project: {
+            fullname: { $concat: ['$name.intial', ' ', '$name.firstName', ' ', '$name.lastName'] },
+            location: 1,
+            age: 1,
+            gender: 1
+        }
+    },
+    {$group: {
+        _id:{city:'$location.city'},
+        totalPerson: {$sum:1}
+    }}
+]);
