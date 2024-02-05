@@ -164,3 +164,19 @@ Priti Adamane
 Bareen Javali
 20:41
 Bareen Javali
+
+
+db -> distinct -> sort -> filter -> group --> lookup -> project ->
+
+db.collection.aggregate([
+    {},
+    {},
+    {},
+    {},
+    {},
+    ....
+]);
+
+db.person.insertMany([
+    {_id:1, name:{firstName:'Jack', lastName='Johnson', intial:'Mr'},}
+]);
